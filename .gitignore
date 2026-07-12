@@ -1,0 +1,23 @@
+# macOS junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# editor temp files
+*~
+*.swp
+*.swo
+~$*
+.vscode/
+.idea/
+
+# environment files (no PII, no secrets — but future-proof)
+.env
+.env.local
+*.log
+
+# node stuff (not currently used but future-proof)
+node_modules/
+package-lock.json
