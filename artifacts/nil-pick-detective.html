@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nil Pick Detective · Victory Ikpe Portfolio</title>
+  <meta name="description" content="A Socratic Custom GPT that guides grocery-fulfillment supervisors through structured root-cause investigations of nil-pick incidents." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: { 950: '#0b1220' },
+            brand: { emerald: '#10b981', amber: '#f59e0b', deep: '#064e3b' },
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            sans:    ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+  <!-- ============ NAV ============ -->
+  <nav class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="font-display text-xl font-semibold text-brand-emerald">Victory Ikpe</a>
+      <a href="../index.html#artifacts" class="text-sm font-medium text-slate-300 hover:text-brand-emerald transition">
+        &larr; Back to All Artifacts
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-deep/40 via-slate-950 to-slate-950"></div>
+    <div class="absolute -top-20 right-0 w-96 h-96 bg-brand-emerald/20 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">ARTIFACT 01</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">Custom GPT</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">Design Thinking</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">Ethical AI</span>
+      </div>
+
+      <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">Nil Pick Detective</h1>
+      <p class="text-xl text-slate-300 leading-relaxed max-w-3xl">
+        A Socratic coaching bot that guides new grocery-fulfillment supervisors through
+        a structured, evidence-based root-cause investigation of nil-pick incidents &mdash;
+        without ever assigning blame.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="https://chatgpt.com/g/g-6a53c1e871b48191bd7258c6a424fb1d-nil-pick-detective"
+           target="_blank" rel="noopener"
+           class="px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+          Try the Live Bot &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- INTRODUCTION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Introduction</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          &ldquo;Nil Pick Detective&rdquo; is a Custom GPT built to solve a real operational problem
+          I encountered in grocery e-commerce fulfillment: newly promoted supervisors receive
+          daily nil-pick reports (instances where an ordered item cannot be found) but have
+          no structured method to investigate the root causes. They guess, they blame pickers,
+          or they ignore the report entirely. The bot serves as a private, judgment-free
+          thinking partner that walks them through a rigorous, Socratic investigation in
+          under five minutes.
+        </p>
+      </section>
+
+      <!-- DESCRIPTION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Description</h2>
+        <div class="text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            The bot offers two conversation modes:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li><strong class="text-slate-100">Mode A &mdash; Diagnose an incident:</strong>
+              walks the user through a five-branch decision tree
+              (Availability &rarr; Findability &rarr; Identifiability &rarr; Process &rarr; Data),
+              one branch at a time.
+            </li>
+            <li><strong class="text-slate-100">Mode B &mdash; 5 Whys deep dive:</strong>
+              iterative drilling for recurring patterns, always steering toward systemic
+              root causes rather than individual blame.
+            </li>
+          </ul>
+          <p>
+            It is bound by explicit rules that require it to (a) frame every cause as a
+            HYPOTHESIS, not a verdict, (b) lead with systemic explanations before considering
+            individual behavior, (c) refuse to accept confidential company data even when
+            volunteered, and (d) close each investigation with a testable experiment rather
+            than a conclusion.
+          </p>
+        </div>
+      </section>
+
+      <!-- OBJECTIVE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Objective</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          To design a Custom GPT that teaches a repeatable, ethical investigation method &mdash;
+          not just to answer questions, but to build diagnostic thinking skills in new
+          supervisors so they can apply the same framework independently after the
+          conversation ends. Success means the user walks away with a hypothesis and a
+          testable experiment, not with someone to blame.
+        </p>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Process</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          I applied the full <strong class="text-slate-100">Design Thinking</strong> methodology
+          across five phases:
+        </p>
+
+        <ol class="space-y-4 text-slate-300">
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">1</span>
+            <div>
+              <strong class="text-slate-100">Empathy</strong> &mdash; profiled the target user
+              (&ldquo;Sam, the New Ops Supervisor&rdquo;): overwhelmed, nervous, wants a private
+              thinking partner without judgment.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">2</span>
+            <div>
+              <strong class="text-slate-100">Define</strong> &mdash; scoped the problem narrowly:
+              guide root-cause investigation using only public retail research, no company data,
+              no personnel evaluation.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">3</span>
+            <div>
+              <strong class="text-slate-100">Ideate</strong> &mdash; brainstormed five candidate
+              modes; selected two (Socratic diagnosis + 5 Whys) for v1 and deferred three others.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">4</span>
+            <div>
+              <strong class="text-slate-100">Prototype</strong> &mdash; wrote the full Instructions
+              block covering role, user, core behaviors, decision tree, knowledge boundaries,
+              ethics, and conversation close, then deployed as a live Custom GPT.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">5</span>
+            <div>
+              <strong class="text-slate-100">Test</strong> &mdash; ran 8 tests across happy path,
+              adversarial (bias probe, data leak, hallucination), and edge cases. v1 scored 4/8.
+              Identified structural gaps in the KNOWLEDGE BOUNDARIES rule, rewrote it into
+              three components (detection + response template + echo-suppression), and
+              re-tested. v2 scored 6/6 with zero data leaks.
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Tools and Technologies Used</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">OpenAI Custom GPT</p>
+            <p class="text-sm text-slate-400 mt-1">Platform for bot creation and deployment</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">GPT-4</p>
+            <p class="text-sm text-slate-400 mt-1">Underlying language model</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">Design Thinking</p>
+            <p class="text-sm text-slate-400 mt-1">Product design methodology</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">5 Whys / Ishikawa</p>
+            <p class="text-sm text-slate-400 mt-1">Root-cause analysis frameworks</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">Microsoft Word</p>
+            <p class="text-sm text-slate-400 mt-1">Documentation and test logging</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">Adversarial Testing</p>
+            <p class="text-sm text-slate-400 mt-1">Bias, data-leak, and hallucination probes</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE PROPOSITION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Value Proposition</h2>
+        <blockquote class="pl-6 border-l-4 border-brand-emerald">
+          <p class="text-lg italic text-slate-200 leading-relaxed">
+            &ldquo;Nil Pick Detective proves that thoughtful AI design &mdash; not raw model power &mdash;
+            is what makes an AI product usable, ethical, and durable. It demonstrates that
+            with the right structural rules, an LLM can teach diagnostic thinking, protect
+            confidential data, and preserve human dignity all in the same conversation.&rdquo;
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- UNIQUE VALUE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Unique Value</h2>
+        <div class="text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            Most retail AI tools optimize <em>outcomes</em> (recommend a substitution, predict
+            stockouts, route the pick path). This bot optimizes <em>reasoning</em> &mdash; it
+            teaches the user how to think, not just what to conclude. That is a rare category.
+          </p>
+          <p>
+            The v2 test cycle also produced a discovery worth noting: with the right rule
+            structure, aligned behavior can emerge <em>without being explicitly programmed</em>.
+            Under user pressure to skip questioning, the bot proactively defended the picker
+            (ethics rule) and framed its response as a working theory (hypothesis rule) &mdash;
+            behaviors that were never coded together but emerged from the rule stack interacting.
+            This is the kind of AI product design that inspires confidence.
+          </p>
+        </div>
+      </section>
+
+      <!-- RELEVANCE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Relevance</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          For any recruiter, hiring manager, or organization evaluating AI/ML talent: this
+          artifact demonstrates end-to-end AI product thinking. Not just prompt engineering,
+          but a full cycle of user empathy, structural rule design, adversarial testing,
+          version iteration, and honest reflection on both successes and failures. That
+          combination &mdash; technical fluency, product judgment, and ethical vigilance &mdash;
+          is exactly what organizations need as they move from AI experimentation to
+          responsible AI deployment.
+        </p>
+      </section>
+
+      <!-- REFERENCES -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">References</h2>
+        <ul class="space-y-3 text-slate-300 text-base">
+          <li>
+            Corsten, D., &amp; Gruen, T. (2003). Desperately seeking shelf availability:
+            An examination of the extent, the causes, and the efforts to address retail
+            out-of-stocks. <em>International Journal of Retail &amp; Distribution
+            Management</em>, 31(12), 605-617.
+          </li>
+          <li>
+            IDEO. (n.d.). <em>Design Thinking</em>. Retrieved from
+            <a href="https://designthinking.ideo.com/" target="_blank" rel="noopener"
+               class="text-brand-emerald hover:underline">designthinking.ideo.com</a>
+          </li>
+          <li>
+            Instacart. (Various). Published research on picker experience and grocery
+            fulfillment operations.
+          </li>
+          <li>
+            OpenAI. (2024). <em>Building Custom GPTs: Guide to Instructions and Capabilities</em>.
+          </li>
+        </ul>
+      </section>
+
+      <!-- LIVE LINK CTA -->
+      <div class="mt-16 p-8 bg-gradient-to-br from-brand-deep/40 to-slate-900 border border-brand-emerald/30 rounded-2xl text-center">
+        <h3 class="font-display text-2xl font-bold mb-3">Experience the Bot Yourself</h3>
+        <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+          The live Nil Pick Detective is available on the ChatGPT platform.
+          Ask it to help you investigate a hypothetical nil-pick incident.
+        </p>
+        <a href="https://chatgpt.com/g/g-6a53c1e871b48191bd7258c6a424fb1d-nil-pick-detective"
+           target="_blank" rel="noopener"
+           class="inline-block px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+          Launch Nil Pick Detective &rarr;
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="py-10 border-t border-slate-800 text-center text-sm text-slate-500 mt-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <a href="../index.html" class="text-brand-emerald hover:underline">&larr; Back to Portfolio Home</a>
+      <p class="mt-4">&copy; <span id="year"></span> Victory Ikpe &middot; AIML-500 Portfolio</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

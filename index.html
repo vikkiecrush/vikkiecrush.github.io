@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victory Ikpe — Senior Data Scientist &amp; Emerging AI/ML Leader</title>
+  <meta name="description" content="Portfolio of Victory Ikpe: Senior Data Scientist advancing into AI/ML leadership. Applied statistics, ethical AI, and human-centered problem solving." />
+  <meta name="author" content="Victory Ikpe" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Victory Ikpe — Senior Data Scientist &amp; Emerging AI/ML Leader" />
+  <meta property="og:description" content="Portfolio showcasing my journey into AI/ML leadership through hands-on projects, research, and applied statistics." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CDN + custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              950: '#0b1220',
+            },
+            brand: {
+              emerald: '#10b981',
+              amber:   '#f59e0b',
+              deep:    '#064e3b',
+            },
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            sans:    ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+  <!-- ================ NAV ================ -->
+  <nav class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="font-display text-xl font-semibold text-brand-emerald">Victory Ikpe</a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="#about" class="hover:text-brand-emerald transition">About</a>
+        <a href="#value" class="hover:text-brand-emerald transition">Value Proposition</a>
+        <a href="#artifacts" class="hover:text-brand-emerald transition">Artifacts</a>
+        <a href="#beyond" class="hover:text-brand-emerald transition">Beyond Work</a>
+        <a href="#contact" class="hover:text-brand-emerald transition">Contact</a>
+      </div>
+      <a href="#contact" class="md:hidden text-brand-emerald text-sm font-semibold">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ================ HERO ================ -->
+  <header id="top" class="relative overflow-hidden">
+    <!-- Decorative gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-deep/40 via-slate-950 to-slate-950"></div>
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-emerald/20 rounded-full blur-3xl"></div>
+    <div class="absolute top-40 -left-40 w-96 h-96 bg-brand-amber/10 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
+      <div class="grid md:grid-cols-3 gap-12 items-center">
+        <div class="md:col-span-2">
+          <p class="text-brand-amber font-semibold tracking-widest text-sm mb-4 uppercase">Portfolio · AIML-500</p>
+          <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
+            Victory <span class="text-brand-emerald">Ikpe</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-300 font-light mb-8 leading-relaxed">
+            Senior Data Scientist &middot; Emerging AI/ML Leader &middot; Graduate Student of Artificial Intelligence
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#artifacts"
+               class="px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+              View My Work
+            </a>
+            <a href="#value"
+               class="px-6 py-3 border border-slate-600 text-slate-200 font-semibold rounded-lg hover:border-brand-emerald hover:text-brand-emerald transition">
+              My Value Proposition
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Photo Placeholder -->
+        <div class="flex justify-center md:justify-end">
+          <div class="w-56 h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-brand-emerald to-brand-deep p-1 shadow-2xl shadow-brand-emerald/20">
+            <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+              <!-- Replace with: <img src="assets/images/profile.jpg" alt="Victory Ikpe" class="w-full h-full object-cover rounded-full"/> -->
+              <span class="font-display text-6xl font-bold text-brand-emerald">VI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================ ABOUT ================ -->
+  <section id="about" class="py-20 md:py-28 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">01 · About Me</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-8">Professional Bio</h2>
+
+      <div class="space-y-6 text-lg text-slate-300 leading-relaxed">
+        <p>
+          I am a <strong class="text-slate-100">Senior Data Scientist</strong> with a
+          <strong class="text-slate-100">Master of Science in Applied Statistics &amp; Decision Analytics</strong>
+          and I am currently pursuing a graduate program in <strong class="text-slate-100">Artificial Intelligence</strong>
+          at Indiana Wesleyan University. My journey has spanned three years of applied data work
+          across geophysics, supply chain, and last-mile e-commerce delivery &mdash; including
+          co-managing a last-mile delivery service company.
+        </p>
+
+        <p>
+          That operational grounding is my differentiator. I have seen firsthand how data
+          decisions land on real people: pickers, drivers, dispatchers, supervisors. It's why
+          I build with empathy first, statistical rigor second, and algorithmic complexity
+          last &mdash; not the other way around.
+        </p>
+
+        <p>
+          My current step is a promotion into a Data Scientist role. My next goal is to
+          become a <strong class="text-brand-emerald">thoughtful AI Leader</strong> &mdash; someone
+          who guides organizations to adopt AI/ML not just because it is possible, but because
+          it is the right, ethical, and human-centered choice.
+        </p>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-slate-800">
+        <div>
+          <p class="font-display text-3xl font-bold text-brand-emerald">3+</p>
+          <p class="text-sm text-slate-400 mt-1">Years in Data</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-brand-emerald">2</p>
+          <p class="text-sm text-slate-400 mt-1">Graduate Degrees</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-brand-emerald">4</p>
+          <p class="text-sm text-slate-400 mt-1">Industries Served</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-brand-emerald">∞</p>
+          <p class="text-sm text-slate-400 mt-1">Learning Mindset</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ VALUE PROPOSITION ================ -->
+  <section id="value" class="py-20 md:py-28 border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900/30">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">02 · What I Offer</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-10">Personal Value Proposition</h2>
+
+      <blockquote class="relative pl-8 border-l-4 border-brand-emerald">
+        <p class="font-display text-2xl md:text-3xl italic leading-relaxed text-slate-100">
+          &ldquo;As a Senior Data Scientist with a foundation in applied statistics and hands-on
+          experience across supply chain, e-commerce, and last-mile delivery, I bring a rare
+          blend of <span class="text-brand-emerald">statistical rigor</span> and
+          <span class="text-brand-emerald">operational empathy</span> to AI/ML problems. I help
+          organizations move beyond the hype and build intelligent systems that
+          <span class="text-brand-emerald">amplify human judgment</span> rather than replace it
+          &mdash; ethical, human-centered, and built to earn trust.&rdquo;
+        </p>
+      </blockquote>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-12">
+        <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-xl">
+          <div class="text-brand-amber font-display text-2xl font-bold mb-2">Rigor</div>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Applied statistics graduate training &mdash; I know when a model is truly signalling
+            and when it is noise wearing a confidence interval.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-xl">
+          <div class="text-brand-amber font-display text-2xl font-bold mb-2">Empathy</div>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Field-tested across geophysics, supply chain, and last-mile delivery. Real people
+            are downstream of every model decision I make.
+          </p>
+        </div>
+        <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-xl">
+          <div class="text-brand-amber font-display text-2xl font-bold mb-2">Ethics</div>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Bias-refusing systems, transparent reasoning, human oversight. AI that respects
+            the people it serves.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ ARTIFACTS ================ -->
+  <section id="artifacts" class="py-20 md:py-28 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">03 · The Work</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Portfolio Artifacts</h2>
+      <p class="text-lg text-slate-400 mb-12 max-w-3xl">
+        Each artifact below is a piece of evidence &mdash; a completed deliverable that
+        demonstrates a specific competency. Click any card to read the full write-up,
+        including objective, process, tools, and value.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Artifact 1: Nil Pick Detective -->
+        <a href="artifacts/nil-pick-detective.html"
+           class="group block p-6 bg-slate-900/70 border border-slate-800 rounded-xl hover:border-brand-emerald hover:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-emerald/10">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-lg bg-brand-emerald/20 flex items-center justify-center text-2xl"></div>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">Custom GPT</span>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-2 group-hover:text-brand-emerald transition">Nil Pick Detective</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            A Socratic coaching bot that guides grocery-fulfillment supervisors through
+            structured root-cause investigation of nil-pick incidents.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Custom GPT</span>
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Design Thinking</span>
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Ethical AI</span>
+          </div>
+          <p class="mt-4 text-brand-emerald text-sm font-semibold group-hover:underline">Read the full case study →</p>
+        </a>
+
+        <!-- Artifact 2: AI/ML Evolution -->
+        <a href="artifacts/aiml-evolution.html"
+           class="group block p-6 bg-slate-900/70 border border-slate-800 rounded-xl hover:border-brand-emerald hover:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-emerald/10">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-lg bg-brand-amber/20 flex items-center justify-center text-2xl"></div>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-brand-amber/20 text-brand-amber">Research</span>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-2 group-hover:text-brand-emerald transition">AI/ML Evolution Timeline</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            A visual and written timeline of AI's evolution from McCulloch &amp; Pitts (1943)
+            through the modern era of foundation models.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Research</span>
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Canva</span>
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Timeline Design</span>
+          </div>
+          <p class="mt-4 text-brand-emerald text-sm font-semibold group-hover:underline">Read the full case study →</p>
+        </a>
+
+        <!-- Coming soon placeholders -->
+        <div class="p-6 bg-slate-900/30 border border-dashed border-slate-800 rounded-xl">
+          <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center text-2xl mb-4"></div>
+          <h3 class="font-display text-xl font-semibold mb-2 text-slate-500">Artifact 3 · Coming Soon</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            The next artifact from my AIML-500 coursework will be added here as it is completed.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900/30 border border-dashed border-slate-800 rounded-xl">
+          <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center text-2xl mb-4"></div>
+          <h3 class="font-display text-xl font-semibold mb-2 text-slate-500">Artifact 4 · Coming Soon</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            The next artifact from my AIML-500 coursework will be added here as it is completed.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900/30 border border-dashed border-slate-800 rounded-xl">
+          <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center text-2xl mb-4"></div>
+          <h3 class="font-display text-xl font-semibold mb-2 text-slate-500">Artifact 5 · Coming Soon</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            The next artifact from my AIML-500 coursework will be added here as it is completed.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ BEYOND WORK ================ -->
+  <section id="beyond" class="py-20 md:py-28 border-t border-slate-800 bg-gradient-to-b from-slate-900/30 to-slate-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">04 · Beyond Work</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-8">When I'm Not With Data</h2>
+
+      <p class="text-lg text-slate-300 leading-relaxed mb-10">
+        The best data scientists I know are also whole people. Outside of work and study, I recharge through:
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-xl text-center hover:border-brand-emerald transition">
+          <div class="text-4xl mb-3"></div>
+          <p class="font-semibold text-slate-200">Working Out</p>
+        </div>
+        <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-xl text-center hover:border-brand-emerald transition">
+          <div class="text-4xl mb-3"></div>
+          <p class="font-semibold text-slate-200">High-Thrill Adventures</p>
+        </div>
+        <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-xl text-center hover:border-brand-emerald transition">
+          <div class="text-4xl mb-3"></div>
+          <p class="font-semibold text-slate-200">Cooking</p>
+        </div>
+        <div class="p-6 bg-slate-900/50 border border-slate-800 rounded-xl text-center hover:border-brand-emerald transition">
+          <div class="text-4xl mb-3"></div>
+          <p class="font-semibold text-slate-200">Family &amp; Friends</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ CONTACT ================ -->
+  <section id="contact" class="py-20 md:py-28 border-t border-slate-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">05 · Let's Connect</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Get in Touch</h2>
+      <p class="text-lg text-slate-400 mb-10 leading-relaxed">
+        I'm always open to conversations about AI/ML, ethical model design, data science
+        careers, or how AI can be applied thoughtfully in supply chain and operations.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://linkedin.com/in/victory-ikpe"
+           target="_blank" rel="noopener"
+           class="px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+          Connect on LinkedIn →
+        </a>
+        <a href="https://github.com/vikkiecrush"
+           target="_blank" rel="noopener"
+           class="px-6 py-3 border border-slate-600 text-slate-200 font-semibold rounded-lg hover:border-brand-emerald hover:text-brand-emerald transition">
+          View GitHub →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ FOOTER ================ -->
+  <footer class="py-10 border-t border-slate-800 text-center text-sm text-slate-500">
+    <div class="max-w-6xl mx-auto px-6">
+      <p>&copy; <span id="year"></span> Victory Ikpe · Built with intention · AIML-500 Portfolio</p>
+      <p class="mt-2 text-xs">
+        AI Assistance Disclosure: portfolio structure and styling were drafted with the help of
+        an AI coding assistant. All career decisions, artifacts, and analytical conclusions are my own.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
