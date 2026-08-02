@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML &amp; DL in Manufacturing (Group Project) &middot; Victory Ikpe Portfolio</title>
+  <meta name="description" content="A group case study comparing traditional Machine Learning (Siemens Predictive Maintenance) with Deep Learning (BMW Automated Visual Inspection), delivered as an interactive HTML slide deck deployed to GitHub Pages." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: { 950: '#0b1220' },
+            brand: { emerald: '#10b981', amber: '#f59e0b', deep: '#064e3b' },
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            sans:    ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+  <!-- ============ NAV ============ -->
+  <nav class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="font-display text-xl font-semibold text-brand-emerald">Victory Ikpe</a>
+      <a href="../index.html#artifacts" class="text-sm font-medium text-slate-300 hover:text-brand-emerald transition">
+        &larr; Back to All Artifacts
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-deep/40 via-slate-950 to-slate-950"></div>
+    <div class="absolute -top-20 right-0 w-96 h-96 bg-brand-emerald/20 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">ARTIFACT 03</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">Group Project</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">Comparative Analysis</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-emerald/20 text-brand-emerald">Strategic Recommendation</span>
+      </div>
+
+      <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">Machine Learning &amp; Deep Learning in Manufacturing</h1>
+      <p class="text-xl text-slate-300 leading-relaxed max-w-3xl">
+        A group case-study comparing <strong class="text-slate-100">Siemens' Predictive Maintenance</strong>
+        (traditional ML) with <strong class="text-slate-100">BMW's Automated Visual Inspection</strong>
+        (Deep Learning), and recommending a phased AI-adoption strategy for manufacturers &mdash;
+        delivered as an interactive HTML slide deck deployed to GitHub Pages.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="https://vikkiecrush.github.io/aiml500-group5-manufacturing/"
+           target="_blank" rel="noopener"
+           class="px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+          View the Live Slide Deck &rarr;
+        </a>
+        <a href="https://github.com/vikkiecrush/aiml500-group5-manufacturing"
+           target="_blank" rel="noopener"
+           class="px-6 py-3 bg-slate-800 text-slate-100 font-semibold rounded-lg hover:bg-slate-700 transition border border-slate-700">
+          View Source on GitHub
+        </a>
+      </div>
+
+      <div class="mt-6 text-sm text-slate-400">
+        <span class="font-semibold text-slate-300">My role:</span> Comparativist + Strategist (Slides 8&ndash;11)
+        &middot; <span class="font-semibold text-slate-300">Group size:</span> 4 members
+        &middot; <span class="font-semibold text-slate-300">Course:</span> AIML 500
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- INTRODUCTION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Introduction</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          This artifact is a collaborative case study produced for AIML 500 that examines how
+          two of the most established AI paradigms &mdash; classical Machine Learning and modern
+          Deep Learning &mdash; are being applied to solve real, high-stakes operational problems
+          in the manufacturing sector. Rather than treating the two approaches as competitors,
+          our group set out to show <em>where each one belongs</em>, why the choice matters,
+          and how a real-world manufacturer should sequence its AI investments to earn
+          maximum business value with minimum risk.
+        </p>
+      </section>
+
+      <!-- DESCRIPTION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Description</h2>
+        <div class="text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            The final deliverable is a <strong class="text-slate-100">13-slide interactive HTML
+            presentation</strong>, hosted on GitHub Pages, that walks a stakeholder audience
+            through:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-4">
+            <li>The industry landscape (data types, operational challenges, AI transformation)</li>
+            <li>A traditional ML case study &mdash; <strong class="text-slate-100">Siemens Predictive Maintenance</strong>
+              (sensor-driven Random Forest / XGBoost models)</li>
+            <li>A Deep Learning case study &mdash; <strong class="text-slate-100">BMW Automated Visual Inspection</strong>
+              (CNN-based image classification)</li>
+            <li>A head-to-head comparative analysis and critical trade-off assessment</li>
+            <li>A phased strategic recommendation (Crawl &rarr; Walk &rarr; Run &rarr; Fly)</li>
+            <li>An ethics and Responsible-AI reflection specific to manufacturing</li>
+          </ul>
+          <p>
+            My personal contribution to the deck was the <strong class="text-slate-100">Comparativist +
+            Strategist role</strong> (Slides 8&ndash;11): synthesizing my teammates' individual case
+            studies into an integrated comparative framework, arguing the strategic sequencing
+            recommendation, and framing the ethical implications.
+          </p>
+        </div>
+      </section>
+
+      <!-- OBJECTIVE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Objective</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          To produce a rigorous, decision-oriented comparative analysis of Machine Learning
+          and Deep Learning in manufacturing &mdash; grounded in real corporate examples and
+          peer-reviewed literature &mdash; that would give a non-technical executive audience
+          a defensible framework for choosing between the two approaches and a clear starting
+          point for their own AI journey. Success meant leaving the audience with a
+          <em>recommendation</em>, not just a description.
+        </p>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Process</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          Our group followed a structured five-phase collaboration process:
+        </p>
+
+        <ol class="space-y-4 text-slate-300">
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">1</span>
+            <div>
+              <strong class="text-slate-100">Role assignment &amp; scoping</strong> &mdash; the four
+              members divided ownership: Industry Analyst, ML Specialist, DL Specialist, and
+              Comparativist + Strategist (my role). Each owner picked a real company as their
+              case study anchor.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">2</span>
+            <div>
+              <strong class="text-slate-100">Independent research</strong> &mdash; each member
+              sourced peer-reviewed literature (Google Scholar, Consensus, Semantic Scholar),
+              triangulated against official corporate sources, and drafted their assigned slide
+              content.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">3</span>
+            <div>
+              <strong class="text-slate-100">Synthesis (my portion)</strong> &mdash; I integrated
+              the ML and DL case studies into a comparative framework across eight dimensions
+              (business problem, data type, algorithm, feature engineering, interpretability,
+              computational cost, ideal use case, ethical exposure), and drafted the phased
+              adoption recommendation.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">4</span>
+            <div>
+              <strong class="text-slate-100">Deliverable production</strong> &mdash; the group
+              converted the written content into an interactive HTML slide deck (tabs,
+              flip-cards, clickable roadmap, comparison-table toggle) rather than a
+              conventional PowerPoint, to demonstrate technical fluency and improve
+              stakeholder engagement.
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">5</span>
+            <div>
+              <strong class="text-slate-100">Deployment &amp; review</strong> &mdash; the deck was
+              published to GitHub Pages for team-wide access, peer-reviewed for accuracy against
+              the source literature, and prepared for live presentation with per-slide speaker
+              notes.
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Tools and Technologies Used</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">HTML5 / CSS3 / JavaScript</p>
+            <p class="text-sm text-slate-400 mt-1">Interactive slide deck</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">GitHub Pages</p>
+            <p class="text-sm text-slate-400 mt-1">Deployment platform</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">Google Scholar</p>
+            <p class="text-sm text-slate-400 mt-1">Peer-reviewed source discovery</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">Consensus / Semantic Scholar</p>
+            <p class="text-sm text-slate-400 mt-1">Literature triangulation</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">Git / GitHub</p>
+            <p class="text-sm text-slate-400 mt-1">Version control &amp; team collaboration</p>
+          </div>
+          <div class="p-4 bg-slate-900/70 border border-slate-800 rounded-lg">
+            <p class="font-semibold text-slate-100">Font Awesome / Tailwind-style CSS</p>
+            <p class="text-sm text-slate-400 mt-1">Iconography &amp; layout</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE PROPOSITION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Value Proposition</h2>
+        <blockquote class="pl-6 border-l-4 border-brand-emerald">
+          <p class="text-lg italic text-slate-200 leading-relaxed">
+            &ldquo;The most valuable AI advice isn't &lsquo;use the newest model.&rsquo; It's
+            &lsquo;use the right model for your data, your team, and your risk profile.&rsquo;
+            This project translates that principle into a phased, defensible adoption strategy
+            &mdash; giving decision-makers a way to invest in AI without betting the factory
+            on it.&rdquo;
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- UNIQUE VALUE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Unique Value</h2>
+        <div class="text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            Most academic AI comparisons stop at &ldquo;ML is interpretable, DL is accurate.&rdquo;
+            Our deck goes further &mdash; it prescribes a <em>sequence</em>. It argues that a
+            manufacturer without mature data infrastructure should not begin with Deep Learning
+            no matter how impressive the accuracy, because the operational cost, talent scarcity,
+            and regulatory complexity will outrun the business benefit. Predictive maintenance
+            with classical ML is the correct beachhead, and Deep Learning is the earned expansion.
+          </p>
+          <p>
+            The comparative-analysis and strategic-recommendation sections I authored show
+            end-to-end business reasoning: taking two technical case studies and turning them
+            into an executive-ready decision framework. That translation skill &mdash; from
+            technical detail to strategic action &mdash; is exactly what distinguishes a data
+            scientist from a Data Scientist who can lead.
+          </p>
+        </div>
+      </section>
+
+      <!-- RELEVANCE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Relevance</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          For recruiters and hiring managers, this artifact demonstrates three capabilities
+          that scale beyond any single project: (1) the ability to synthesize independent
+          research from multiple teammates into a single coherent argument; (2) the discipline
+          to translate technical trade-offs into strategic recommendations executives can
+          actually act on; and (3) the awareness to embed ethics and Responsible-AI considerations
+          into the core recommendation rather than treating them as an afterthought. These are
+          the exact skills organizations need as they mature from AI experimentation to
+          enterprise-scale AI programs.
+        </p>
+      </section>
+
+      <!-- REFERENCES -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">References</h2>
+        <ul class="space-y-3 text-slate-300 text-base">
+          <li>
+            Carvalho, T. P., Soares, F. A. A. M. N., Vita, R., Francisco, R. da P., Basto,
+            J. P., &amp; Alcal&aacute;, S. G. S. (2019). A systematic literature review of
+            machine learning methods applied to predictive maintenance.
+            <em>Computers &amp; Industrial Engineering, 137</em>, 106024.
+          </li>
+          <li>
+            Dwivedi, Y. K., Hughes, L., Ismagilova, E., et al. (2021). Artificial Intelligence
+            (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and
+            agenda for research, practice and policy.
+            <em>International Journal of Information Management, 57</em>, 101994.
+          </li>
+          <li>
+            Jordan, M. I., &amp; Mitchell, T. M. (2015). Machine learning: Trends, perspectives,
+            and prospects. <em>Science, 349</em>(6245), 255&ndash;260.
+          </li>
+          <li>
+            Lee, J., Bagheri, B., &amp; Kao, H. A. (2015). A Cyber-Physical Systems architecture
+            for Industry 4.0-based manufacturing systems.
+            <em>Manufacturing Letters, 3</em>, 18&ndash;23.
+          </li>
+          <li>
+            LeCun, Y., Bengio, Y., &amp; Hinton, G. (2015). Deep learning.
+            <em>Nature, 521</em>(7553), 436&ndash;444.
+          </li>
+        </ul>
+      </section>
+
+      <!-- LIVE LINK CTA -->
+      <div class="mt-16 p-8 bg-gradient-to-br from-brand-deep/40 to-slate-900 border border-brand-emerald/30 rounded-2xl text-center">
+        <h3 class="font-display text-2xl font-bold mb-3">Experience the Interactive Deck</h3>
+        <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+          All 13 slides are fully interactive &mdash; tabbed views, flip-cards, clickable roadmap,
+          and a comparison-table toggle. Use the arrow keys to navigate.
+        </p>
+        <a href="https://vikkiecrush.github.io/aiml500-group5-manufacturing/"
+           target="_blank" rel="noopener"
+           class="inline-block px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+          Launch the Slide Deck &rarr;
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="py-10 border-t border-slate-800 text-center text-sm text-slate-500 mt-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <a href="../index.html" class="text-brand-emerald hover:underline">&larr; Back to Portfolio Home</a>
+      <p class="mt-4">&copy; <span id="year"></span> Victory Ikpe &middot; AIML-500 Portfolio</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
