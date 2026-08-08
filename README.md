@@ -8,9 +8,11 @@ Personal portfolio site for **Victory Ikpe**, Senior Data Scientist and Emerging
 
 ## What's inside
 
-- `index.html` — Landing page: hero, bio, personal value proposition, artifacts grid, personal, contact.
+- `index.html` — Landing page: hero, bio, personal value proposition, target audience, artifacts grid, beyond-work, contact.
 - `artifacts/nil-pick-detective.html` — Artifact 1: Custom GPT for grocery-fulfillment root-cause analysis.
 - `artifacts/aiml-evolution.html` — Artifact 2: Research timeline of AI's evolution 1943 – present.
+- `artifacts/ml-dl-manufacturing.html` — Artifact 3: Comparative ML/DL case study (Siemens vs. BMW), AIML 500 group project.
+- `artifacts/navigating-human-bias.html` — Artifact 4: Navigating human bias as an AI/ML leader.
 - `assets/styles.css` — Custom styling on top of Tailwind CDN.
 - `assets/images/` — For any images added later (profile photo, artifact screenshots).
 - `assets/docs/` — For downloadable PDFs or supporting docs.
