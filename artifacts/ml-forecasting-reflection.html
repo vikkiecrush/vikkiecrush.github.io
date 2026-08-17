@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflection on a Machine Learning Project: Walmart Sales Forecasting &middot; Victory Ikpe Portfolio</title>
+  <meta name="description" content="A model-validation retrospective on a published Walmart sales forecasting study — comparing eight ML models, auditing the original methodology, and redesigning it with time-aware validation and continuous monitoring." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: { 950: '#0b1220' },
+            brand: { emerald: '#10b981', amber: '#f59e0b', deep: '#064e3b' }
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            sans:    ['"Inter"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
+
+  <!-- ============ NAV ============ -->
+  <nav class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="font-display text-xl font-semibold text-brand-emerald">Victory Ikpe</a>
+      <a href="../index.html#artifacts" class="text-sm font-medium text-slate-300 hover:text-brand-emerald transition">
+        &larr; Back to All Artifacts
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-deep/40 via-slate-950 to-slate-950"></div>
+    <div class="absolute -top-20 right-0 w-96 h-96 bg-brand-amber/20 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6">
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-amber/20 text-brand-amber">ARTIFACT 05</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-amber/20 text-brand-amber">Machine Learning</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-amber/20 text-brand-amber">Model Validation</span>
+        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-amber/20 text-brand-amber">Forecasting</span>
+      </div>
+
+      <h1 class="font-display text-4xl md:text-6xl font-bold mb-4">Reflection on a Machine Learning Project: Walmart Sales Forecasting</h1>
+      <p class="text-xl text-slate-300 leading-relaxed max-w-3xl">
+        A model-validation retrospective on a published retail forecasting study I co-authored &mdash;
+        revisiting eight competing ML models, an extremely high reported R&sup2;, and the validation
+        strategy I would rebuild from scratch with what I know now.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#results"
+           class="px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+          See the Model Results &rarr;
+        </a>
+        <a href="#improvements"
+           class="px-6 py-3 bg-slate-800 text-slate-100 font-semibold rounded-lg hover:bg-slate-700 transition border border-slate-700">
+          Jump to What I'd Change
+        </a>
+      </div>
+
+      <div class="mt-6 text-sm text-slate-400">
+        <span class="font-semibold text-slate-300">Field:</span> Applied Machine Learning &middot; Retail Forecasting
+        &middot; <span class="font-semibold text-slate-300">Course:</span> AIML 500, Module 5.3 (Model Validation and Verification)
+        &middot; <span class="font-semibold text-slate-300">Format:</span> Technical Reflection on a Published Study
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- INTRODUCTION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Introduction</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Most of the artifacts in this portfolio show me building something new. This one is different
+          on purpose: it is a retrospective on a machine learning project I already finished &mdash; a
+          peer-reviewed study forecasting Walmart weekly sales that was later published in the
+          <em>Asian Journal of Probability and Statistics</em> (Neba et al., 2024), where I contributed
+          as a co-author. Revisiting a completed, published project with fresh eyes is its own kind of
+          skill. It is easy to defend work you already shipped; it is more useful &mdash; and more
+          honest &mdash; to ask what a rigorous reviewer would ask a year later: would this model
+          actually survive contact with production?
+        </p>
+      </section>
+
+      <!-- DESCRIPTION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Description</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          This artifact compares eight machine learning models &mdash; from Linear Regression to
+          XGBoost and LightGBM &mdash; trained on a public Kaggle Walmart sales dataset (2010&ndash;2012)
+          to forecast weekly store sales. It reports the original results, audits the original
+          methodology honestly (including a validation strategy I now believe was flawed), and lays
+          out the specific, concrete changes I would make if I ran this project again today: a
+          time-aware validation strategy, systematic hyperparameter tuning, and a post-deployment
+          monitoring plan grounded in the NIST AI Risk Management Framework.
+        </p>
+      </section>
+
+      <!-- OBJECTIVE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Objective</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          The original project's objective was to determine which machine learning model could most
+          accurately forecast Walmart's weekly sales using historical sales, holiday indicators,
+          temperature, fuel prices, Consumer Price Index (CPI), and unemployment &mdash; and to
+          generate insights that could support inventory planning and other retail decisions. This
+          reflection's objective is narrower and more critical: to evaluate whether &ldquo;most
+          accurate on a held-out test set&rdquo; is the same thing as &ldquo;ready for production,&rdquo;
+          and to specify exactly what would need to change if it were not.
+        </p>
+      </section>
+
+      <!-- ORIGINAL APPROACH -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">The Original Data Preparation &amp; Modeling Approach</h2>
+        <div class="text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            We began with exploratory data analysis to understand variable distributions, correlations,
+            and patterns. Outliers were addressed with <strong class="text-slate-100">Winsorization</strong>
+            &mdash; capping extreme values rather than discarding observations &mdash; applied to weekly
+            sales, holiday flag, temperature, fuel price, CPI, and unemployment. We then used random
+            sampling to split the data into roughly 80% training and 20% testing, with a fixed random
+            seed for reproducibility.
+          </p>
+          <p>
+            We compared eight models spanning a full range of complexity: Linear Regression, Multiple
+            Regression, a Generalized Linear Model (GLM), Decision Tree, Random Forest, Gradient
+            Boosting Machine (GBM), XGBoost, and LightGBM &mdash; specifically to test whether advanced
+            ensemble methods could capture relationships that simpler linear models could not.
+          </p>
+        </div>
+      </section>
+
+      <!-- RESULTS TABLE -->
+      <section id="results" class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Model Performance Results</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          Model performance was evaluated with three complementary metrics: Mean Absolute Error (MAE),
+          Root Mean Squared Error (RMSE), and R&sup2;. XGBoost produced the strongest reported numbers
+          by a wide margin over the linear baseline:
+        </p>
+        <div class="overflow-x-auto rounded-xl border border-slate-800">
+          <table class="w-full text-left text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-100">
+              <tr>
+                <th class="px-5 py-3 font-semibold">Model</th>
+                <th class="px-5 py-3 font-semibold">MAE</th>
+                <th class="px-5 py-3 font-semibold">RMSE</th>
+                <th class="px-5 py-3 font-semibold">R&sup2;</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800">
+              <tr class="bg-brand-emerald/10">
+                <td class="px-5 py-3 font-semibold text-brand-emerald">XGBoost (best)</td>
+                <td class="px-5 py-3">1,226.471</td>
+                <td class="px-5 py-3">1,700.981</td>
+                <td class="px-5 py-3">&asymp; 0.99999</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3">Linear Regression (baseline)</td>
+                <td class="px-5 py-3">35,632.510</td>
+                <td class="px-5 py-3">80,153.858</td>
+                <td class="px-5 py-3">&mdash;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-sm text-slate-500">Source: Neba et al. (2024), <em>Asian Journal of Probability and Statistics, 26</em>(7), 1&ndash;23.</p>
+
+        <div class="mt-8 text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            Looking back, I understand more clearly why using multiple metrics matters here. MAE gives
+            an intuitive, easily communicated average error size. RMSE penalizes large errors more
+            heavily &mdash; important in retail, because a handful of very large forecasting misses can
+            drive real stockouts or excess inventory that an average error hides. R&sup2; provides a
+            third lens on model fit, but I would not use it alone: an R&sup2; of essentially 1.0 is
+            exactly the kind of result that should trigger <em>more</em> scrutiny, not less, before I'd
+            trust it on unseen future data.
+          </p>
+        </div>
+      </section>
+
+      <!-- ETHICS -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Ethical Considerations</h2>
+        <div class="text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            One genuine strength of the original project was that we looked beyond aggregate accuracy.
+            The dataset had no demographic fields, so we used holiday vs. non-holiday period as a proxy
+            subgroup split. Several of the advanced models had substantially lower error during
+            non-holiday periods &mdash; evidence that strong overall performance does not guarantee
+            equally reliable predictions under every condition, which is exactly the kind of hidden
+            failure mode a fairness-blind evaluation would miss.
+          </p>
+          <p>
+            The study also discussed algorithmic bias, transparency, and accountability at a general
+            level. In hindsight, I believe privacy deserved more direct treatment rather than being
+            folded into that broader discussion. The dataset carried no personally identifiable customer
+            information, which limited immediate risk &mdash; but if a future version incorporated
+            customer-level purchasing or behavioral data, I would insist on data minimization, explicit
+            access controls, and formal privacy governance before a single model was trained on it.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHAT I'D CHANGE -->
+      <section id="improvements" class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Improvements Based on What I Know Now</h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-8">
+          If I ran this project again today, two changes matter more than any tweak to model choice.
+        </p>
+
+        <div class="space-y-6">
+
+          <!-- IMPROVEMENT 1 -->
+          <div class="p-6 bg-slate-900/70 border border-slate-800 rounded-xl">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">1</span>
+              <div class="flex-1">
+                <h3 class="font-display text-xl font-semibold mb-2 text-slate-100">Replace the Random Split with Time-Aware Validation</h3>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                  We used a random 80/20 train-test split. For a forecasting problem, randomly mixing
+                  observations across time periods does not represent the real-world task, where
+                  historical data must predict a genuinely unseen future &mdash; and can let a model
+                  quietly train on information from &ldquo;future&rdquo; rows relative to what it is
+                  being tested on.
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-slate-400 pl-2">
+                  <li>Use chronological train / validation / test periods, or rolling time-series cross-validation, instead of a random split.</li>
+                  <li>Scikit-learn explicitly warns that standard cross-validation can be inappropriate for time-ordered data for this exact reason (Scikit-learn Developers, n.d.).</li>
+                  <li>Reserve the most recent period as a completely untouched final test set, never seen during any tuning step.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMPROVEMENT 2 -->
+          <div class="p-6 bg-slate-900/70 border border-slate-800 rounded-xl">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-emerald/20 text-brand-emerald font-bold flex items-center justify-center">2</span>
+              <div class="flex-1">
+                <h3 class="font-display text-xl font-semibold mb-2 text-slate-100">Systematic Hyperparameter Tuning, Not Defaults</h3>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                  We relied primarily on default model settings. I would instead systematically tune
+                  parameters such as learning rate, tree depth, number of boosting rounds, and
+                  regularization &mdash; using the time-based validation split above, not the original
+                  random one &mdash; to build real evidence that XGBoost's near-perfect result
+                  generalizes, rather than reflects leakage from the split itself.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MONITORING -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Post-Deployment Monitoring Plan</h2>
+        <div class="text-lg text-slate-300 leading-relaxed space-y-4">
+          <p>
+            The original project was a research study, not a live deployment, so no monitoring system
+            ever ran against it. If I deployed this model today, I would establish baseline MAE and
+            RMSE values and compare every forecast cycle's predictions against actual sales &mdash;
+            tracked separately for holiday and non-holiday periods, since that is exactly where the
+            original analysis found performance gaps.
+          </p>
+          <p>
+            I would also monitor the input distributions themselves &mdash; CPI, unemployment, fuel
+            prices, temperature, and holiday patterns &mdash; for data drift, with a full model review
+            on a monthly or quarterly cadence. Consistent error deterioration, significant drift, or a
+            major shift in consumer behavior would trigger investigation and, if warranted, retraining.
+            This mirrors the NIST AI Risk Management Framework's emphasis on continuously measuring and
+            managing AI risk across the full system lifecycle, not just at launch (NIST, 2023).
+          </p>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Process</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          I returned to the original study, its methodology, and its published results, and asked a
+          reviewer's question of my own past work: which parts hold up, and which would not survive a
+          rigorous model-validation audit? I traced the random train/test split forward to its actual
+          consequence for a time-ordered forecasting problem, cross-checked the correct alternative
+          against the scikit-learn documentation on time-series validation, and grounded the monitoring
+          plan in the NIST AI RMF rather than inventing an ad hoc checklist. I used ChatGPT to help
+          organize and tighten the wording of this reflection and to help surface areas of the original
+          project worth revisiting &mdash; the analysis, the model audit, and every final judgment call
+          are my own.
+        </p>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Tools and Technologies Used</h2>
+        <div class="p-6 bg-slate-900/70 border border-brand-amber/40 rounded-xl">
+          <p class="text-slate-200 leading-relaxed mb-3">
+            <strong class="text-brand-amber">Generative AI was used as a drafting and organizing aid,</strong>
+            consistent with the assignment's instructions.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-slate-300 pl-2">
+            <li><strong class="text-slate-100">Original project stack:</strong> Linear Regression, Multiple Regression, GLM, Decision Tree, Random Forest, GBM, XGBoost, LightGBM; MAE / RMSE / R&sup2; for evaluation; Winsorization for outlier treatment.</li>
+            <li><strong class="text-slate-100">Reflection tools:</strong> ChatGPT for organizing structure and refining wording; Code Puppy (Claude Sonnet class) for portfolio HTML formatting.</li>
+            <li><strong class="text-slate-100">Human ownership:</strong> the methodology audit, the specific validation-strategy fix, the monitoring plan, and every final wording choice are mine.</li>
+            <li><strong class="text-slate-100">Research grounding:</strong> NIST AI Risk Management Framework (2023) and scikit-learn's <code class="text-brand-amber">TimeSeriesSplit</code> documentation, used to justify the recommended changes rather than assert them from intuition.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- VALUE PROPOSITION -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Value Proposition of the Artifact</h2>
+        <blockquote class="pl-6 border-l-4 border-brand-emerald">
+          <p class="text-lg italic text-slate-200 leading-relaxed">
+            &ldquo;This artifact is evidence that I can hold my own published work to the same
+            standard I would apply to anyone else's &mdash; that a near-perfect R&sup2; makes me more
+            suspicious, not more confident, and that I know exactly which validation-strategy fix would
+            close the gap. That combination of technical fluency and self-critical rigor is what
+            separates a model builder from a model validator.&rdquo;
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- UNIQUE VALUE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Unique Value</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Unlike the other artifacts in this portfolio, this one is a retrospective audit of a
+          completed, peer-reviewed, published study &mdash; not a new build. That makes it the clearest
+          evidence in the whole portfolio of genuine hands-on modeling experience (eight models,
+          three metrics, a real published outcome) paired with the model-validation maturity to name a
+          real flaw in that same published work and specify exactly how to fix it.
+        </p>
+      </section>
+
+      <!-- RELEVANCE -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">Relevance</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          For hiring managers, this is the artifact that answers &ldquo;has she actually built and
+          evaluated ML models, and does she understand validation well enough to catch her own team's
+          mistakes?&rdquo; For AIML-500 peers and faculty, it directly demonstrates the Module 5.3
+          learning objective &mdash; model validation and verification &mdash; applied to real,
+          previously-published results rather than a toy exercise.
+        </p>
+      </section>
+
+      <!-- REFERENCES -->
+      <section class="mb-14">
+        <h2 class="font-display text-3xl font-bold mb-4 text-brand-emerald">References</h2>
+        <ul class="space-y-3 text-slate-300 text-base">
+          <li>
+            National Institute of Standards and Technology. (2023).
+            <em>Artificial intelligence risk management framework (AI RMF 1.0).</em>
+            U.S. Department of Commerce.
+          </li>
+          <li>
+            Neba, C., Shu, G. F. F., Nsuh, G., Amouda, P. A., Neba, A. F., Webnda, F., Ikpe, V.,
+            Orelaja, A., &amp; Sylla, N. A. (2024). Advancing retail predictions: Integrating diverse
+            machine learning models for accurate Walmart sales forecasting.
+            <em>Asian Journal of Probability and Statistics, 26</em>(7), 1&ndash;23.
+          </li>
+          <li>
+            Scikit-learn Developers. (n.d.). <em>TimeSeriesSplit.</em> Scikit-learn documentation.
+          </li>
+        </ul>
+      </section>
+
+      <!-- BACK TO PORTFOLIO CTA -->
+      <div class="mt-16 p-8 bg-gradient-to-br from-brand-deep/40 to-slate-900 border border-brand-emerald/30 rounded-2xl text-center">
+        <h3 class="font-display text-2xl font-bold mb-3">Explore the Rest of the Portfolio</h3>
+        <p class="text-slate-300 mb-6 max-w-xl mx-auto">
+          A published forecasting study, an applied Custom GPT, a research timeline, a group case study,
+          and a leadership reflection &mdash; five artifacts, five different facets of end-to-end AI/ML
+          practice.
+        </p>
+        <a href="../index.html#artifacts"
+           class="inline-block px-6 py-3 bg-brand-emerald text-slate-950 font-semibold rounded-lg hover:bg-emerald-400 transition shadow-lg shadow-brand-emerald/30">
+          See All Artifacts &rarr;
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="py-10 border-t border-slate-800 text-center text-sm text-slate-500 mt-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <a href="../index.html" class="text-brand-emerald hover:underline">&larr; Back to Portfolio Home</a>
+      <p class="mt-4">&copy; <span id="year"></span> Victory Ikpe &middot; AIML-500 Portfolio</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
