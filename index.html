@@ -56,6 +56,7 @@
         <a href="#value" class="hover:text-brand-emerald transition">Value Proposition</a>
         <a href="#audience" class="hover:text-brand-emerald transition">Who It's For</a>
         <a href="#artifacts" class="hover:text-brand-emerald transition">Artifacts</a>
+        <a href="#feedback" class="hover:text-brand-emerald transition">Feedback</a>
         <a href="#beyond" class="hover:text-brand-emerald transition">Beyond Work</a>
         <a href="#contact" class="hover:text-brand-emerald transition">Contact</a>
       </div>
@@ -387,20 +388,69 @@
           <p class="mt-4 text-brand-emerald text-sm font-semibold group-hover:underline">Read the reflection →</p>
         </a>
 
-        <div class="p-6 bg-slate-900/30 border border-dashed border-slate-800 rounded-xl">
-          <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center mb-4">
-            <!-- Plus icon: placeholder for future artifact -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-600">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
+        <!-- Artifact 5: ML Forecasting Reflection -->
+        <a href="artifacts/ml-forecasting-reflection.html"
+           class="group block p-6 bg-slate-900/70 border border-slate-800 rounded-xl hover:border-brand-emerald hover:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-emerald/10">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-lg bg-brand-amber/20 flex items-center justify-center">
+              <!-- Trending chart: forecasting / model validation theme -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-brand-amber">
+                <polyline points="3 17 9 11 13 15 21 6"></polyline>
+                <polyline points="14 6 21 6 21 13"></polyline>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-brand-amber/20 text-brand-amber">Machine Learning</span>
           </div>
-          <h3 class="font-display text-xl font-semibold mb-2 text-slate-500">Artifact 5 · Coming Soon</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            The next artifact from my AIML-500 coursework will be added here as it is completed.
+          <h3 class="font-display text-xl font-semibold mb-2 group-hover:text-brand-emerald transition">ML Forecasting Reflection: Walmart Sales</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">
+            A model-validation retrospective on a published Walmart sales forecasting study
+            (8 models compared, co-authored, peer-reviewed) &mdash; auditing the original
+            methodology and redesigning it with time-aware validation and live monitoring.
           </p>
-        </div>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Model Validation</span>
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Forecasting</span>
+            <span class="px-2 py-1 bg-slate-800 rounded text-slate-300">Published Research</span>
+          </div>
+          <p class="mt-4 text-brand-emerald text-sm font-semibold group-hover:underline">Read the full reflection &rarr;</p>
+        </a>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ PEER FEEDBACK ================ -->
+  <section id="feedback" class="py-20 md:py-28 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">05 &middot; Peer Feedback</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-8">What Reviewers Are Saying</h2>
+      <p class="text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl">
+        This portfolio has gone through a real peer-review cycle with AIML-500 classmates. Here's
+        feedback I received in Workshop 5 &mdash; and how it shaped what you're looking at now.
+      </p>
+
+      <blockquote class="p-8 bg-slate-900/70 border border-slate-800 rounded-2xl mb-8">
+        <p class="text-lg italic text-slate-200 leading-relaxed mb-4">
+          &ldquo;It was really convenient to go through all the artifacts, and it was nice to see that
+          each project was structured in the same way so that one could easily understand the
+          objective, process, tools used, and experience that was gained&hellip; the Nil Pick Detective
+          was the most interesting artifact, as I really appreciate the fact that you showed the test
+          results for both versions of the product and not just for the last one. The fact that there
+          were more successful test results in the second version compared to the first one (6 out of 6
+          versus 4 out of 8) was evidence of the iteration and the use of results from the previous
+          version to improve the solution. Moreover, it was really nice to see the clearly defined
+          target audience and value proposition.&rdquo;
+        </p>
+        <footer class="text-sm text-slate-400 not-italic">&mdash; Resha Adhikari, AIML-500 peer review, Workshop 5</footer>
+      </blockquote>
+
+      <div class="p-6 bg-brand-emerald/10 border border-brand-emerald/30 rounded-xl">
+        <h3 class="font-display text-xl font-semibold mb-3 text-brand-emerald">How This Feedback Shaped the Final Version</h3>
+        <ul class="list-disc list-inside space-y-2 text-slate-300">
+          <li>The consistent 10-section structure Resha praised across Artifacts 1&ndash;4 was deliberately preserved for <a href="artifacts/ml-forecasting-reflection.html" class="text-brand-emerald hover:underline">Artifact 5</a> &mdash; same section skeleton, same rigor.</li>
+          <li>The transparency Resha called out in Nil Pick Detective (showing v1's weaker 4/8 results, not just the polished v2) is echoed directly in Artifact 5's &ldquo;Improvements Based on What I Know Now&rdquo; section &mdash; naming a real flaw in a published, peer-reviewed study I co-authored and specifying exactly how I'd fix it.</li>
+          <li>This Peer Feedback section itself is new &mdash; added so the Target Audience and Value Proposition sections Resha highlighted are backed by visible, real reviewer evidence rather than my own claim alone.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -408,7 +458,7 @@
   <!-- ================ BEYOND WORK ================ -->
   <section id="beyond" class="py-20 md:py-28 border-t border-slate-800 bg-gradient-to-b from-slate-900/30 to-slate-950">
     <div class="max-w-4xl mx-auto px-6">
-      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">05 · Beyond Work</p>
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">06 &middot; Beyond Work</p>
       <h2 class="font-display text-4xl md:text-5xl font-bold mb-8">When I'm Not With Data</h2>
 
       <p class="text-lg text-slate-300 leading-relaxed mb-10">
@@ -439,7 +489,7 @@
   <!-- ================ CONTACT ================ -->
   <section id="contact" class="py-20 md:py-28 border-t border-slate-800">
     <div class="max-w-3xl mx-auto px-6 text-center">
-      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">06 · Let's Connect</p>
+      <p class="text-brand-amber font-semibold text-sm tracking-widest uppercase mb-3">07 &middot; Let's Connect</p>
       <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Get in Touch</h2>
       <p class="text-lg text-slate-400 mb-10 leading-relaxed">
         I'm always open to conversations about AI/ML, ethical model design, data science
