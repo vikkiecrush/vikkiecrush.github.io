@@ -21,3 +21,6 @@
 # node stuff (not currently used but future-proof)
 node_modules/
 package-lock.json
+
+# local query exports (never commit)
+bigquery_results/
